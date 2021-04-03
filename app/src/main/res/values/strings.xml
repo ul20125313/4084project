@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">dazuoye</string>
+    <string name="login">登录</string>
+    <string name="zc">注册</string>
+    <string name="log">我的掌上食堂</string>
+    <string name="google_map_key">AIzaSyBBn-BrG-K8qK7kkPbkTUse2pwsFoat2AA</string>
+</resources>

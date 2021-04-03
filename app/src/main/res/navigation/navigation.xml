@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/shouye2">
+    <fragment
+        android:id="@+id/shouye2"
+        android:name="com.example.dazuoye.userpage.shouye.shouye2"
+        android:label="shouye2_fragment"
+        tools:layout="@layout/shouye" />
+    <fragment
+        android:id="@+id/caidan2"
+        android:name="com.example.dazuoye.userpage.caidan.caidan2"
+        android:label="caidan2_fragment"
+        tools:layout="@layout/caidan" />
+    <fragment
+        android:id="@+id/dingdan2"
+        android:name="com.example.dazuoye.userpage.dingdan.dingdan2"
+        android:label="dingdan2_fragment"
+        tools:layout="@layout/dingdan" />
+    <fragment
+        android:id="@+id/wo2"
+        android:name="com.example.dazuoye.userpage.wo.wo2"
+        android:label="wo2_fragment"
+        tools:layout="@layout/wo" />
+</navigation>

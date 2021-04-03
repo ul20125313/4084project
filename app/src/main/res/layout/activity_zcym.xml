@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg4"
+    tools:context=".logpage.zcym">
+
+    <TextView
+
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:background="@drawable/biankuangmain"
+        android:alpha="0.7"
+        android:layout_margin="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/l2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="#fff"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Account：" />
+
+            <TextView
+                android:background="@drawable/biankuangshuru"
+                android:padding="2dp"
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:id="@+id/zh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="账号：" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password：" />
+            <EditText
+                android:background="@drawable/biankuangshuru"
+                android:padding="2dp"
+                android:textColor="#fff"
+
+                android:layout_margin="5dp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="请输入密码"
+                android:textSize="15dp"
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="#fff"
+                android:padding="0dp"
+                android:textSize="15dp"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name：" />
+
+            <EditText
+                android:background="@drawable/biankuangshuru"
+                android:padding="2dp"
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="请输入昵称"
+
+                android:textSize="15dp"
+                android:id="@+id/xm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:textColor="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="0dp"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telephone：" />
+
+            <EditText
+                android:background="@drawable/biankuangshuru"
+                android:padding="2dp"
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="请输入电话"
+
+                android:textSize="15dp"
+                android:id="@+id/dh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="0dp"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender：" />
+            <EditText
+                android:background="@drawable/biankuangshuru"
+                android:padding="2dp"
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="请输入班级"
+                android:textSize="15dp"
+                android:id="@+id/bj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="0dp"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adress：" />
+            <EditText
+                android:background="@drawable/biankuangshuru"
+                android:padding="2dp"
+                android:textColor="#fff"
+                android:hint="请输入地址"
+                android:layout_margin="5dp"
+                android:textSize="15dp"
+                android:id="@+id/dz"
+                android:maxEms="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/l1"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/zcanniu"
+            android:drawableTop="?attr/homeAsUpIndicator"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Return" />
+
+
+        <Button
+            android:layout_marginRight="10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/zc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zcanniu"
+            android:drawableTop="@android:drawable/ic_menu_myplaces"
+            android:text="Finish" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/shouye2"
+        android:icon="@drawable/shouye"
+        android:title="Home page" />
+    <item
+        android:id="@+id/caidan2"
+        android:icon="@drawable/caidan"
+        android:title="menu" />
+    <item
+        android:id="@+id/dingdan2"
+        android:icon="@drawable/dingdan"
+        android:title="Order form" />
+    <item
+        android:id="@+id/wo2"
+        android:icon="@drawable/wode"
+        android:title="My info" />
+</menu>
