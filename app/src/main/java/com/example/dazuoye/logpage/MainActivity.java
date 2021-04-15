@@ -22,38 +22,38 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText t1;
-    private EditText t2;
-    private Button dl;
-    private Button zc;
+    private EditText t1; // create a EditText view variable for t1
+    private EditText t2; // create a EditText view variable for t2
+    private Button dl;  // create a Button view variable for d1
+    private Button zc; // create a  Button view variable for zc
     public static shujukuinfo sjk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
-        sjk = new shujukuinfo(this);
-        init();
+        setContentView(R.layout.activity_main); // connect with the activity_main layout view
+        getSupportActionBar().hide(); // hide the action bar
+        sjk = new shujukuinfo(this); // create an instance of the shujukuinfo class
+        init(); //start to initialize
         lis();
     }
 
     void init() {
 
-        t1 = (EditText) findViewById(R.id.t1);
-        t2 = (EditText) findViewById(R.id.t2);
-        dl = (Button) findViewById(R.id.dl);
-        zc = (Button) findViewById(R.id.zc);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        t1 = (EditText) findViewById(R.id.t1); // connect with the edittext t1
+        t2 = (EditText) findViewById(R.id.t2);// connect with the edittext t2
+        dl = (Button) findViewById(R.id.dl);// connect with the button t1
+        zc = (Button) findViewById(R.id.zc);// connect with the button t2
+        FirebaseDatabase database = FirebaseDatabase.getInstance(); // create a instance of firebase
         DatabaseReference userDb = database.getReference("user");
-        userDb.addValueEventListener(new ValueEventListener() {
+        userDb.addValueEventListener(new ValueEventListener() { // create the listener for the userDb
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                HashMap<String, String> value = (HashMap<String, String>) dataSnapshot.getValue();
+            public void onDataChange(DataSnapshot dataSnapshot) {// if a user register an account, it will trigger this listener
+                HashMap<String, String> value = (HashMap<String, String>) dataSnapshot.getValue();// use the hashmap to store the data in firebase
                 if (value != null && value.size() > 0) {
-                    String password = value.get("password");
+                    String password = value.get("password");// by using the key  to obtain the value
                     String account = value.get("zh");
-                    t1.setText(account);
+                    t1.setText(account);//insert the value from firebase into the text box
                     t2.setText(password);
                 }
             }
@@ -61,22 +61,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError error) {
                 Log.e("error", error.getMessage());
-            }
+            }// if it can't connect with firebase
         });
     }
 
     void lis() {
         dl.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {// set a click listener for the button dl
                 HashMap<String, String> ztmap = sjk.userfind(t1.getText().toString());
-                if (t2.getText().toString().equals(ztmap.get("password"))) {
+                if (t2.getText().toString().equals(ztmap.get("password"))) {// if the password is correct
                     Toast.makeText(MainActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
                     mainpage.info.zlmap = ztmap;
                     mainpage.info.dingdan = sjk.dingdansfind(mainpage.info.zlmap.get("zh"));
-                    Intent intent = new Intent(MainActivity.this, mainpage.class);
-                    startActivity(intent);
-                    t1.setText("");
+                    Intent intent = new Intent(MainActivity.this, mainpage.class);// create a new activity
+                    startActivity(intent);//access to the main page
+                    t1.setText("");//initialize the text box
                     t2.setText("");
                     finish();
                 } else {
@@ -86,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
         });
         zc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {// the registration button click listener
                 Intent a = new Intent(MainActivity.this, zcym.class);
-                startActivity(a);
+                startActivity(a);// access to the registration interface
             }
         });
     }
