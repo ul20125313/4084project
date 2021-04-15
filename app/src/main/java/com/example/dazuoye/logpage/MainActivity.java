@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         dl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {// set a click listener for the button dl
-                HashMap<String, String> ztmap = sjk.userfind(t1.getText().toString());
+                HashMap<String, String> ztmap = sjk.userfind(t1.getText().toString());// call the database function userfind
                 if (t2.getText().toString().equals(ztmap.get("password"))) {// if the password is correct
                     Toast.makeText(MainActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
                     mainpage.info.zlmap = ztmap;
