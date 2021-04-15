@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class zcym extends AppCompatActivity {
-    private TextView zh;
+    private TextView zh;// create the view variable
     private EditText password;
     private EditText xm;
     private EditText dh;
@@ -38,13 +38,13 @@ public class zcym extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zcym);
+        setContentView(R.layout.activity_zcym);// connect with activity_zcym.xml
         getSupportActionBar().hide();
-        init();
+        init();// start to initialize
         lis();
     }
     void init(){
-        zh = (TextView) findViewById(R.id.zh);
+        zh = (TextView) findViewById(R.id.zh);// connect with the elements created in the activity_zcym.xml
         password = (EditText) findViewById(R.id.password);
         xm = (EditText) findViewById(R.id.xm);
         dh = (EditText) findViewById(R.id.dh);
@@ -60,27 +60,28 @@ public class zcym extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                tpassword =password.getText().toString();
+                tpassword =password.getText().toString();// extract the data from the text box and change the values into string type
                 txm=xm.getText().toString();
                 tdh =dh.getText().toString();
                 tbj=bj.getText().toString();
                 tdz =dz.getText().toString();
-                if(tpassword.length()<6){
-                    Toast.makeText(zcym.this,"The password must be no less than 6 numbers",Toast.LENGTH_SHORT).show();
+                if(tpassword.length()<6){// check whether the lenght of password is less than six
+                    Toast.makeText(zcym.this,"The password must be no less than 6 numbers",Toast.LENGTH_SHORT).show();// at toast tip
                 }
-                else if(txm.length()==0||tbj.length()==0||tdh.length()==0||tbj.length()==0){
+                else if(txm.length()==0||tbj.length()==0||tdh.length()==0||tbj.length()==0){// check whether all of the details are filled out
                     Toast.makeText(zcym.this,"Some information not filled in",Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    td=new dialog(zcym.this, "Confirmation of registration", new dialog.oncl() {
+                else {// if all of the person details are filled out successfully
+                    td=new dialog(zcym.this, "Confirmation of registration", new dialog.oncl() {// a confirm dialog
+
                         @Override
-                        public void onfou() {
+                        public void onfou() {// if the user tap on No
                             td.dismiss();
                         }
                         @Override
-                        public void onshi() {
+                        public void onshi() {// if the user tap on Yes
                             HashMap<String,String>zl=new HashMap<>();
-                            zl.put("dingdanid","0");
+                            zl.put("dingdanid","0");//package all of the users's details
                             zl.put("xm",txm);
                             zl.put("bj",tbj);
                             zl.put("password",tpassword);
@@ -89,10 +90,10 @@ public class zcym extends AppCompatActivity {
                             zl.put("im",new Integer(R.drawable.tx).toString());
                             zl.put("zh",zh.getText().toString());
                             zl.put("dh",tdh);
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();// create an instance of firebase
                             DatabaseReference userDb = database.getReference("user");
-                            userDb.setValue(zl);
-                            MainActivity.sjk.userinsert(zl);
+                            userDb.setValue(zl);// upload the data on the firebase
+                            MainActivity.sjk.userinsert(zl);// upload the data on the local database
                             MainActivity.sjk.addzh();
                             finish();
                         }
@@ -106,7 +107,7 @@ public class zcym extends AppCompatActivity {
             public void onClick(View v) {
                 finish();
             }
-        });
+        });//terminate
 
     }
 }
