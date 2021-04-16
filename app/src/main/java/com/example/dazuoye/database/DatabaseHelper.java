@@ -1,4 +1,4 @@
-package com.example.dazuoye.shujuku;
+package com.example.dazuoye.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
-
-import java.util.HashMap;
 
 public class DatabaseHelper extends SQLiteOpenHelper {// android studio local database
 

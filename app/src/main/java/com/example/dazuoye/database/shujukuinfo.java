@@ -1,4 +1,4 @@
-package com.example.dazuoye.shujuku;
+package com.example.dazuoye.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,12 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.dazuoye.logpage.MainActivity;
 import com.example.dazuoye.userpage.mainpage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class shujukuinfo {
     public static final String name="yonghu";

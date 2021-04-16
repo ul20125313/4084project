@@ -30,21 +30,21 @@ public class Web1 extends AppCompatActivity {
         webv.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webv.getSettings();
 
-
+//If you want to interact with JavaScript in the visited page, the WebView must be set to support JavaScript
         webSettings.setJavaScriptEnabled(true);
 
+//Set up adaptive screen, both of which are shared
+        webSettings.setUseWideViewPort(true); //Adjust the image to fit the WebView
+        webSettings.setLoadWithOverviewMode(true); //Zoom to the size of the screen
 
-        webSettings.setUseWideViewPort(true);
-        webSettings.setLoadWithOverviewMode(true);
+//Zoom operation
+        webSettings.setSupportZoom(true); //Support zoom, the default is true. It's the premise of the following.
+        webSettings.setBuiltInZoomControls(true); //Set the built-in zoom control. If false, the WebView is not scalable
+        webSettings.setDisplayZoomControls(false); //Hide native zoom controls
 
-
-        webSettings.setSupportZoom(true);
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setDisplayZoomControls(false);
-
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-        webSettings.setLoadsImagesAutomatically(true);
-        webSettings.setDefaultTextEncodingName("utf-8");
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //Support to open a new window through JS
+        webSettings.setLoadsImagesAutomatically(true); //Support automatic loading of pictures
+        webSettings.setDefaultTextEncodingName("utf-8");//Format encoding
     }
 
     @Override
@@ -58,3 +58,4 @@ public class Web1 extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 }
+

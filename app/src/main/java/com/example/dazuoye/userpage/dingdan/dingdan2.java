@@ -1,5 +1,5 @@
 package com.example.dazuoye.userpage.dingdan;
-
+////View order page interaction
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
@@ -42,7 +42,7 @@ public class dingdan2 extends Fragment {
         r1 = (RecyclerView)view.findViewById(R.id.r1);
     }
     @Override
-    public void onResume() {
+    public void onResume() {//Adapter selection
         super.onResume();
         zdingdanAdap adap=new zdingdanAdap(context, mainpage.info.dingdan);
         r1.setLayoutManager(new LinearLayoutManager(context));
@@ -57,3 +57,4 @@ public class dingdan2 extends Fragment {
     }
 
 }
+

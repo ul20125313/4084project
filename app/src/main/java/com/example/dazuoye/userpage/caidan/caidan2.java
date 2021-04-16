@@ -1,5 +1,5 @@
 package com.example.dazuoye.userpage.caidan;
-
+////This class is used for menu home page interaction
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
@@ -39,7 +39,7 @@ public class caidan2 extends Fragment {
     public static caidan2 newInstance() {
         return new caidan2();
     }
-
+    //Set the private property class and store the data in the arraylist
     private Banner lun1;
     private RecyclerView r1;
     private Button zf;
@@ -52,20 +52,20 @@ public class caidan2 extends Fragment {
     @Nullable
     @Override
 
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {//Reference function to add layout for menu
         View av=inflater.inflate(R.layout.caidan,container,false);
         init();
 
         return  av;
     }
-    void addmap(Integer r,String ms,Integer je){
+    void addmap(Integer r,String ms,Integer je){//Add map
         HashMap<String,String> map=new HashMap<>();
         map.put("im",r.toString());
         map.put("ms",ms);
         map.put("je",je.toString());
         mainpage.info.caidan.add(map);
     }
-    void init(){
+    void init(){//Setting text properties for menus
         context=getActivity();
         imgs=new ArrayList<>();
         tes=new ArrayList<>();
@@ -98,7 +98,7 @@ public class caidan2 extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {//Add layout and show the effect of the broadcast
         super.onViewCreated(view, savedInstanceState);
         lun1 = (Banner) view.findViewById(R.id.lun1);
         r1 = (RecyclerView) view.findViewById(R.id.r1);
@@ -133,7 +133,7 @@ public class caidan2 extends Fragment {
     }
 
     @Override
-    public void onResume() {
+    public void onResume() {//Add layout and show the effect of the broadc
         super.onResume();
         RAdap adap=new RAdap(context,mainpage.info.caidan);
         r1.setLayoutManager(new LinearLayoutManager(context));
@@ -148,10 +148,10 @@ public class caidan2 extends Fragment {
                 if(Integer.parseInt(mainpage.info.jsje())!=0){
                     ArrayList<HashMap<String,String>>vs=new ArrayList<>();
                     for(int i=0;i<mainpage.info.caidan.size();i++){
-                        if(mainpage.info.tmuen[i]!=0) {
+                        if(mainpage.info.tmuen[i]!=0) {//If the options in the menu are not equal to 0
                             HashMap<String, String> map=mainpage.info.caidan.get(i);
                             int a=Integer.parseInt(map.get("je"));
-                            map.put("sl",new Integer(mainpage.info.tmuen[i]/a).toString());
+                            map.put("sl",new Integer(mainpage.info.tmuen[i]/a).toString());//Make a menu selection
                             vs.add(map);
                         }
                     }
@@ -160,7 +160,7 @@ public class caidan2 extends Fragment {
                     intent.putExtra("maps",vs);
                     mainpage.startActivityForResult(intent,2);
                 }
-                else{
+                else{//Otherwise, the display has no options
                     Toast.makeText(context,"No selection",Toast.LENGTH_SHORT).show();
                 }
             }

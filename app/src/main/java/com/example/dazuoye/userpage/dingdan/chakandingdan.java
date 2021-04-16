@@ -1,5 +1,5 @@
 package com.example.dazuoye.userpage.dingdan;
-
+//View order page interaction
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +19,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class chakandingdan extends AppCompatActivity {
+public class chakandingdan extends AppCompatActivity {//Inherit appcompatactivity class
+    //Create private property class
     private RecyclerView r1;
     private TextView dz;
     private TextView date;
@@ -28,7 +29,7 @@ public class chakandingdan extends AppCompatActivity {
     private Button sc;
     dialog dio;
     Integer pos;
-    ArrayList<HashMap<String,String>>maps;
+    ArrayList<HashMap<String,String>>maps;//Save the map data in the ArrayList
     HashMap<String,String>info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class chakandingdan extends AppCompatActivity {
         init();
         lis();
     }
-    void init(){
+    void init(){//Create a new object and insert data into it at the same time
         r1 = (RecyclerView) findViewById(R.id.r1);
         dz = (TextView) findViewById(R.id.dz);
         date = (TextView) findViewById(R.id.date);
@@ -58,20 +59,20 @@ public class chakandingdan extends AppCompatActivity {
         date.setText(info.get("date"));
 
     }
-    void lis(){
+    void lis(){//Mouse click listener
         fh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent a=new Intent();
-                a.putExtra("finish",false);
+                a.putExtra("finish",false);//Set text properties
                 setResult(3,a);
                 finish();
             }
         });
-        sc.setOnClickListener(new View.OnClickListener() {
+        sc.setOnClickListener(new View.OnClickListener() {//Mouse click listener
             @Override
             public void onClick(View v) {
-                dio=new dialog(chakandingdan.this, "Delete or not", new dialog.oncl() {
+                dio=new dialog(chakandingdan.this, "Delete or not", new dialog.oncl() {//Set text properties
                     @Override
                     public void onfou() {
                         dio.dismiss();
@@ -81,7 +82,7 @@ public class chakandingdan extends AppCompatActivity {
                     public void onshi() {
                         Intent a=new Intent();
                         setResult(3,a);
-                        a.putExtra("finish",true);
+                        a.putExtra("finish",true);//Set text properties
                         a.putExtra("pos",pos);
                         finish();
                     }
@@ -92,3 +93,4 @@ public class chakandingdan extends AppCompatActivity {
         });
     }
 }
+

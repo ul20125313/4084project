@@ -22,11 +22,22 @@ public class touxiangad extends RecyclerView.Adapter<touxiangad.MyH> {
     ArrayList<HashMap<String,String>>maps;
     Context context;
 
+    /**
+     * Construction Method Pass Value
+     * @param context
+     * @param maps
+     */
     public touxiangad(Context context, ArrayList<HashMap<String,String>>maps){
         this.maps=maps;
         this.context=context;
     }
 
+    /**
+     * Load XML layout and bind
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public touxiangad.MyH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,6 +53,9 @@ public class touxiangad extends RecyclerView.Adapter<touxiangad.MyH> {
         holder.im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /**
+                 * Modify the avatar data source and set it up
+                 */
                 touxiang.img=maps.get(position).get("im");
                 touxiang.tx.setImageResource(holder.img);
 
@@ -49,10 +63,18 @@ public class touxiangad extends RecyclerView.Adapter<touxiangad.MyH> {
         });
     }
 
+    /**
+     * Return data length
+     * @return
+     */
     @Override
     public int getItemCount() {
         return maps.size();
     }
+
+    /**
+     * Bind Control
+     */
     class MyH extends RecyclerView.ViewHolder{
         private ImageView im;
         private int img;

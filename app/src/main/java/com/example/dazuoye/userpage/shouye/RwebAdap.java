@@ -23,11 +23,22 @@ public class RwebAdap extends RecyclerView.Adapter<RwebAdap.MyH> {
     ArrayList<HashMap<String,String>>maps;
     Context context;
 
+    /**
+     * Construction Method Pass Value
+     * @param context
+     * @param maps
+     */
     public RwebAdap(Context context, ArrayList<HashMap<String,String>>maps){
         this.maps=maps;
         this.context=context;
     }
 
+    /**
+     * Bind Load Item Layout
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public RwebAdap.MyH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -36,6 +47,11 @@ public class RwebAdap extends RecyclerView.Adapter<RwebAdap.MyH> {
         return my;
     }
 
+    /**
+     * Assign each item
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull final MyH holder, final int position) {
         holder.imageView.setImageResource(Integer.parseInt(maps.get(position).get("im")));
@@ -47,15 +63,23 @@ public class RwebAdap extends RecyclerView.Adapter<RwebAdap.MyH> {
                 //Intent a=new Intent(context,Web1.class);
                 mainpage tmainpage= (mainpage) context;
                 //a.putExtra("url",maps.get(position).get("url"));
-               //tmainpage.startActivity(a);
+                //tmainpage.startActivity(a);
             }
         });
     }
 
+    /**
+     * Length of returned data
+     * @return
+     */
     @Override
     public int getItemCount() {
         return maps.size();
     }
+
+    /**
+     * Bind Control
+     */
     class MyH extends RecyclerView.ViewHolder{
         private ImageView imageView;
         private TextView t1;

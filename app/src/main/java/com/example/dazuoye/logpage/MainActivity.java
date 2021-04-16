@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dazuoye.R;
-import com.example.dazuoye.shujuku.shujukuinfo;
+import com.example.dazuoye.database.shujukuinfo;
 import com.example.dazuoye.userpage.mainpage;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
