@@ -23,7 +23,7 @@ public class touxiang extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_touxiang);
+        setContentView(R.layout.activity_touxiang);//set the avatar display module
         getSupportActionBar().hide();
 
         init();

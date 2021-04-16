@@ -37,10 +37,10 @@ public class xiugai extends AppCompatActivity {
         tj = (Button) findViewById(R.id.tj);
     }
     void lis(){
-        xm.setText(mainpage.info.zlmap.get("xm"));
-        bj.setText(mainpage.info.zlmap.get("bj"));
-        dz.setText(mainpage.info.zlmap.get("dz"));
-        dh.setText(mainpage.info.zlmap.get("dh"));
+        xm.setText(mainpage.info.zlmap.get("xm"));//Get the name information from the home page to populate the text
+        bj.setText(mainpage.info.zlmap.get("bj"));//Get the gender information from the home page to populate the text
+        dz.setText(mainpage.info.zlmap.get("dz"));//Get the address information from the home page to populate the text
+        dh.setText(mainpage.info.zlmap.get("dh"));//Get the phone information from the home page to populate the text
         tj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +54,7 @@ public class xiugai extends AppCompatActivity {
                         mainpage.info.zlmap.put("xm",xm.getText().toString());
                         mainpage.info.zlmap.put("bj",bj.getText().toString());
                         mainpage.info.zlmap.put("dz",dz.getText().toString());
-                        mainpage.info.zlmap.put("dh",dh.getText().toString());
+                        mainpage.info.zlmap.put("dh",dh.getText().toString());//Populate the home page information from the modified content
                         MainActivity.sjk.userupdate(mainpage.info.zlmap.get("zh"),mainpage.info.zlmap);
                         Intent a=new Intent();
                         setResult(4,a);

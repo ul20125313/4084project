@@ -12,8 +12,8 @@ import java.util.HashMap;
 public class dialog extends AlertDialog {
     Context context;
     private TextView ms;
-    private Button fou;
-    private Button shi;
+    private Button fou;//Create a button class called "No"
+    private Button shi;//Create a button class called "Yes"
     oncl on;
     String mess;
     public dialog(Context context, String mess, oncl on) {
